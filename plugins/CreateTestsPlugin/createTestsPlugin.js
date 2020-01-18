@@ -1,58 +1,40 @@
 const fs = require("fs");
-const path = require("path");
+var glob = require("glob");
 
-const testTemplate = require("./testTemplate");
+const { directoriesPattern } = require("./constants");
+const {
+  getComponentName,
+  getComponentStoriesNames,
+  generateHermioneTest,
+  getTestsDirectoryPath
+} = require("./helpers");
 
 const pluginName = "CreateTestsPlugin";
 
 class CreateTestsPlugin {
   apply(compiler) {
     compiler.hooks.run.tap(pluginName, compilation => {
-      const filePath = path.resolve(
-        __dirname,
-        "../../",
-        "src/components/accordion/__stories__/accordion.stories.tsx"
-      );
-
-      console.log(filePath);
-
-      fs.readFile(filePath, "utf8", (err, data) => {
+      glob(directoriesPattern, (err, matches) => {
         if (err) {
           throw err;
         }
 
-        const dataWithoutSpaces = data.replace(/\s/g, "");
-        console.log(dataWithoutSpaces);
-
-        const componentName = dataWithoutSpaces.match(
-          /[a-z]+(?=",module)/gi
-        )[0];
-        console.log(componentName);
-
-        const componentStories = dataWithoutSpaces.match(
-          /[a-z]+(?=",\(\)=>)/gi
-        );
-        console.log(componentStories);
-
-        const testsPath = path.resolve(filePath, "../../", "tests");
-
-        if (!fs.existsSync(testsPath)) {
-          fs.mkdirSync(testsPath);
-        }
-
-        componentStories.forEach(story => {
-          const testPath = path.resolve(testsPath, `${story}.hermione.js`);
-
-          if (!fs.existsSync(testPath)) {
-            console.log(testPath);
-
-            fs.createWriteStream(testPath, "utf8");
-            fs.writeFileSync(
-              testPath,
-              testTemplate(componentName, story),
-              "utf8"
-            );
+        matches.forEach(filePath => {
+          if (!fs.existsSync(filePath)) {
+            throw new Error(`File ${filePath} does not exist`);
           }
+
+          const fileData = fs.readFileSync(filePath, "utf8");
+          const dataWithoutSpaces = fileData.replace(/\s/g, "");
+          const componentName = getComponentName(dataWithoutSpaces);
+          const componentStories = getComponentStoriesNames(dataWithoutSpaces);
+          const testsPath = getTestsDirectoryPath(filePath);
+
+          if (!fs.existsSync(testsPath)) {
+            fs.mkdirSync(testsPath);
+          }
+
+          componentStories.forEach(story => generateHermioneTest(testsPath, componentName, story));
         });
       });
     });
