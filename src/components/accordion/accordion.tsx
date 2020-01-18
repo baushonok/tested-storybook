@@ -15,7 +15,7 @@ class Accordion extends Component<IProps, IState> {
         <button type="button" onClick={this.toggle}>
           Click me
         </button>
-        {showContent && this.renderContent}
+        {showContent && this.renderContent()}
       </Fragment>
     );
   }
