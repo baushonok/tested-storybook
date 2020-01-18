@@ -1,7 +1,9 @@
 module.exports = {
+  baseUrl: "http://localhost:52354/",
+
   sets: {
     desktop: {
-      files: "tests/*.hermione.js"
+      files: "**/tests/*.hermione.js"
     }
   },
 
@@ -10,6 +12,22 @@ module.exports = {
       desiredCapabilities: {
         browserName: "chrome"
       }
+    }
+  },
+
+  plugins: {
+    "html-reporter/hermione": {
+      enabled: true,
+      path: "my/hermione-reports",
+      defaultView: "all",
+      baseHost: "test.com",
+      errorPatterns: [
+        "Parameter .* must be a string",
+        {
+          name: "Cannot read property of undefined",
+          pattern: "Cannot read property .* of undefined"
+        }
+      ]
     }
   }
 };

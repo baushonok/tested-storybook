@@ -15,10 +15,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "create-tests": "webpack --mode production",
+    "test:hermione": "node_modules/.bin/hermione gui",
+    "test": "npm run create-tests && npm run test:hermione",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook",
-    "create-tests": "webpack --mode production"
+    "storybook": "start-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +43,7 @@
     "@storybook/react": "^5.3.6",
     "babel-loader": "^8.0.6",
     "glob": "^7.1.6",
+    "html-reporter": "^5.8.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
