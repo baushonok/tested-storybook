@@ -15,11 +15,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 12345",
     "create-tests": "webpack --mode production",
     "test:hermione": "node_modules/.bin/hermione gui",
-    "test": "npm run create-tests && npm run test:hermione",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook"
+    "test": "npm run create-tests && npm run test:hermione"
   },
   "eslintConfig": {
     "extends": "react-app"
