@@ -15,7 +15,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook"
+    "storybook": "start-storybook",
+    "create-tests": "webpack --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,7 +35,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
     "@storybook/react": "^5.3.6",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
