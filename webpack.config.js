@@ -1,6 +1,6 @@
 const path = require("path");
 
-const CreateTestsPlugin = require("./plugins/createTestsPlugin");
+const CreateTestsPlugin = require("./plugins/CreateTestsPlugin/createTestsPlugin");
 
 module.exports = {
   entry: "./src/index.js",

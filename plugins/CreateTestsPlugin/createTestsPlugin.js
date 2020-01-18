@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
+const testTemplate = require("./testTemplate");
+
 const pluginName = "CreateTestsPlugin";
 
 class CreateTestsPlugin {
@@ -8,7 +10,7 @@ class CreateTestsPlugin {
     compiler.hooks.run.tap(pluginName, compilation => {
       const filePath = path.resolve(
         __dirname,
-        "../",
+        "../../",
         "src/components/accordion/__stories__/accordion.stories.tsx"
       );
 
@@ -58,17 +60,3 @@ class CreateTestsPlugin {
 }
 
 module.exports = CreateTestsPlugin;
-
-const testTemplate = (component, story) =>
-  `const assert = require('chai').assert;
-
-describe(${component}, function() {
-    it(${story}, function() {
-        return this.browser
-            .url('https://github.com/gemini-testing/hermione')
-            .getText('#readme h1:first-of-type')
-            .then(function(title) {
-                assert.equal(title, 'Hermione')
-            });
-    });
-});`;
