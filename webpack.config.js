@@ -1,6 +1,13 @@
 const path = require("path");
 
 const CreateTestsPlugin = require("./plugins/CreateTestsPlugin/createTestsPlugin");
+const {
+  componentNamePattern,
+  storyFilesPath,
+  storyNamePattern,
+  testDirectoryPath
+} = require("./src/constants");
+const testTemplate = require("./src/testTemplate");
 
 module.exports = {
   entry: "./src/index.js",
@@ -19,5 +26,13 @@ module.exports = {
       }
     ]
   },
-  plugins: [new CreateTestsPlugin()]
+  plugins: [
+    new CreateTestsPlugin({
+      storyFilesPath,
+      componentNamePattern,
+      storyNamePattern,
+      testDirectoryPath,
+      testTemplate
+    })
+  ]
 };

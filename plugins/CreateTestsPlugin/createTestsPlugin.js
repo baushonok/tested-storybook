@@ -1,20 +1,30 @@
 const fs = require("fs");
 var glob = require("glob");
 
-const { directoriesPattern } = require("./constants");
 const {
   getComponentName,
   getComponentStoriesNames,
-  generateHermioneTest,
-  getTestsDirectoryPath
+  generateHermioneTest
 } = require("./helpers");
 
 const pluginName = "CreateTestsPlugin";
 
 class CreateTestsPlugin {
+  constructor(options) {
+    this.options = options;
+  }
+
   apply(compiler) {
     compiler.hooks.run.tap(pluginName, compilation => {
-      glob(directoriesPattern, (err, matches) => {
+      const {
+        componentNamePattern,
+        storyFilesPath,
+        storyNamePattern,
+        testDirectoryPath,
+        testTemplate
+      } = this.options;
+
+      glob(storyFilesPath, (err, matches) => {
         if (err) {
           throw err;
         }
@@ -26,15 +36,27 @@ class CreateTestsPlugin {
 
           const fileData = fs.readFileSync(filePath, "utf8");
           const dataWithoutSpaces = fileData.replace(/\s/g, "");
-          const componentName = getComponentName(dataWithoutSpaces);
-          const componentStories = getComponentStoriesNames(dataWithoutSpaces);
-          const testsPath = getTestsDirectoryPath(filePath);
+          const componentName = getComponentName(
+            dataWithoutSpaces,
+            componentNamePattern
+          );
+          const componentStories = getComponentStoriesNames(
+            dataWithoutSpaces,
+            storyNamePattern
+          );
 
-          if (!fs.existsSync(testsPath)) {
-            fs.mkdirSync(testsPath);
+          if (!fs.existsSync(testDirectoryPath)) {
+            fs.mkdirSync(testDirectoryPath);
           }
 
-          componentStories.forEach(story => generateHermioneTest(testsPath, componentName, story));
+          componentStories.forEach(story =>
+            generateHermioneTest(
+              testDirectoryPath,
+              componentName,
+              story,
+              testTemplate
+            )
+          );
         });
       });
     });

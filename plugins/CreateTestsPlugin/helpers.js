@@ -1,21 +1,17 @@
 const fs = require("fs");
 const path = require("path");
 
-const testTemplate = require("./testTemplate");
+const getComponentName = (fileContent, pattern) =>
+  fileContent.match(pattern)[0];
 
-const getTestsDirectoryPath = filePath =>
-  path.resolve(filePath, "../../", "tests");
-
-const getComponentName = fileContent =>
-  fileContent.match(/[a-z]+(?=",module)/gi)[0];
-
-const getComponentStoriesNames = fileContent =>
-  fileContent.match(/[a-z]+(?=",\(\)=>)/gi);
+const getComponentStoriesNames = (fileContent, pattern) =>
+  fileContent.match(pattern);
 
 const generateHermioneTest = (
   testDirectoryPath,
   componentName,
-  componentStoryName
+  componentStoryName,
+  testTemplate
 ) => {
   const testPath = path.resolve(
     testDirectoryPath,
@@ -35,6 +31,5 @@ const generateHermioneTest = (
 module.exports = {
   getComponentName,
   getComponentStoriesNames,
-  generateHermioneTest,
-  getTestsDirectoryPath
+  generateHermioneTest
 };
