@@ -1,15 +1,16 @@
 const fs = require("fs");
 var glob = require("glob");
 
+const { isArray, isFunction, isRegExp, isString } = require("./check-errors");
 const {
   getComponentName,
   getComponentStoriesNames,
-  generateHermioneTest
+  generateTest
 } = require("./helpers");
 
-const pluginName = "CreateTestsPlugin";
+const pluginName = "StorytestsWebpackPlugin";
 
-class CreateTestsPlugin {
+class StorytestsWebpackPlugin {
   constructor(options) {
     this.options = options;
   }
@@ -21,8 +22,16 @@ class CreateTestsPlugin {
         storyFilesPath,
         storyNamePattern,
         testDirectoryPath,
+        testFilePostfixes,
         testTemplate
       } = this.options;
+
+      isRegExp(componentNamePattern, "componentNamePattern");
+      isRegExp(storyNamePattern, "storyNamePattern");
+      isString(storyFilesPath, "storyFilesPath");
+      isString(testDirectoryPath, "testDirectoryPath");
+      isArray(testFilePostfixes, "testFilePostfixes");
+      isFunction(testTemplate, "testTemplate");
 
       glob(storyFilesPath, (err, matches) => {
         if (err) {
@@ -50,12 +59,17 @@ class CreateTestsPlugin {
           }
 
           componentStories.forEach(story =>
-            generateHermioneTest(
-              testDirectoryPath,
-              componentName,
-              story,
-              testTemplate
-            )
+            testFilePostfixes.forEach(postfix => {
+              isString(postfix, "testFilePostfixes");
+
+              generateTest(
+                testDirectoryPath,
+                componentName,
+                story,
+                postfix,
+                testTemplate
+              );
+            })
           );
         });
       });
@@ -63,4 +77,4 @@ class CreateTestsPlugin {
   }
 }
 
-module.exports = CreateTestsPlugin;
+module.exports = StorytestsWebpackPlugin;

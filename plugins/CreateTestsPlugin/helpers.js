@@ -7,29 +7,32 @@ const getComponentName = (fileContent, pattern) =>
 const getComponentStoriesNames = (fileContent, pattern) =>
   fileContent.match(pattern);
 
-const generateHermioneTest = (
+const generateTest = (
   testDirectoryPath,
   componentName,
   componentStoryName,
+  postfix,
   testTemplate
 ) => {
   const testPath = path.resolve(
     testDirectoryPath,
-    `${componentStoryName}.hermione.js`
+    `${componentStoryName}.${postfix}.js`
   );
 
-  if (!fs.existsSync(testPath)) {
-    fs.createWriteStream(testPath, "utf8");
-    fs.writeFileSync(
-      testPath,
-      testTemplate(componentName, componentStoryName),
-      "utf8"
-    );
+  if (fs.existsSync(testPath)) {
+    return;
   }
+
+  fs.createWriteStream(testPath, "utf8");
+  fs.writeFileSync(
+    testPath,
+    testTemplate(componentName, componentStoryName),
+    "utf8"
+  );
 };
 
 module.exports = {
   getComponentName,
   getComponentStoriesNames,
-  generateHermioneTest
+  generateTest
 };
