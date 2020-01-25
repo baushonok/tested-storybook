@@ -4,6 +4,7 @@ const CreateTestsPlugin = require("./plugins/CreateTestsPlugin/createTestsPlugin
 const {
   componentNamePattern,
   storyFilesPath,
+  testFilePostfixes,
   storyNamePattern,
   testDirectoryPath
 } = require("./src/constants");
@@ -32,6 +33,7 @@ module.exports = {
       componentNamePattern,
       storyNamePattern,
       testDirectoryPath,
+      testFilePostfixes,
       testTemplate
     })
   ]

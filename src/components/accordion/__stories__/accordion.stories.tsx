@@ -9,7 +9,7 @@ storiesOf("Accordion", module)
       <Accordion>Hello Button</Accordion>
     </div>
   ))
-  .add("NoContent", () => (
+  .add("No Content", () => (
     <div className="story-container">
       <Accordion></Accordion>
     </div>

@@ -18,7 +18,7 @@ module.exports = {
   plugins: {
     "html-reporter/hermione": {
       enabled: true,
-      path: "my/hermione-reports",
+      path: "hermione/reports",
       defaultView: "all",
       baseHost: "test.com",
       errorPatterns: [

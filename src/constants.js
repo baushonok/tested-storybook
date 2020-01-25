@@ -1,7 +1,7 @@
 const path = require("path");
 
-const componentNamePattern = /[a-z]+(?=",module)/gi;
-const storyNamePattern = /[a-z]+(?=",\(\)=>)/gi;
+const componentNamePattern = /[a-z]+(?=", module)/gi;
+const storyNamePattern = /[a-z ]+(?=", \(\) => )/gi;
 
 const storyFilesPath = path.resolve(
   __dirname,
@@ -10,9 +10,12 @@ const storyFilesPath = path.resolve(
 
 const testDirectoryPath = path.resolve(__dirname, "components/tests");
 
+const testFilePostfixes = ['hermione'];
+
 module.exports = {
   componentNamePattern,
   storyFilesPath,
   storyNamePattern,
-  testDirectoryPath
+  testDirectoryPath,
+  testFilePostfixes
 };
