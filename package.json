@@ -45,6 +45,7 @@
     "babel-loader": "^8.0.6",
     "glob": "^7.1.6",
     "html-reporter": "^5.8.0",
+    "storytests-webpack-plugin": "git+https://github.com/yandex/storytests-webpack-plugin.git",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }

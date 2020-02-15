@@ -1,6 +1,6 @@
 const path = require("path");
 
-const CreateTestsPlugin = require("./plugins/CreateTestsPlugin/createTestsPlugin");
+const StorytestsWebpackPlugin = require('storytests-webpack-plugin');
 const {
   componentNamePattern,
   storyFilesPath,
@@ -28,7 +28,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CreateTestsPlugin({
+    new StorytestsWebpackPlugin({
       storyFilesPath,
       componentNamePattern,
       storyNamePattern,
