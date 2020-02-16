@@ -44,7 +44,7 @@
     "@storybook/react": "^5.3.6",
     "babel-loader": "^8.0.6",
     "html-reporter": "^5.8.0",
-    "storytests-webpack-plugin": "git+https://github.com/yandex/storytests-webpack-plugin.git",
+    "storytests-webpack-plugin": "^1.0.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
