@@ -1,6 +1,7 @@
 # Factory line manager
 [![Travis][build-badge]][build]
 [![Coveralls][coveralls-badge]][coveralls]
+
 [build-badge]: https://img.shields.io/travis/baushonok/tested-storybook/master.png?style=flat-square
 [build]: https://travis-ci.org/baushonok/tested-storybook
 
