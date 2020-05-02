@@ -21,7 +21,7 @@
     "selenium": "selenium-standalone install && selenium-standalone start",
     "create-tests": "webpack --mode production",
     "test:hermione": "node_modules/.bin/hermione gui",
-    "test": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/**/*tsx"
+    "test": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/components/**/*tsx --collectCoverageFrom=!src/components/**/__stories/**/*"
   },
   "eslintConfig": {
     "extends": "react-app"
