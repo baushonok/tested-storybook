@@ -20,7 +20,7 @@
     "selenium": "selenium-standalone install && selenium-standalone start",
     "create-tests": "webpack --mode production",
     "test:hermione": "node_modules/.bin/hermione gui",
-    "test": "npm run create-tests && npm run test:hermione"
+    "test": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/**/*tsx"
   },
   "eslintConfig": {
     "extends": "react-app"
