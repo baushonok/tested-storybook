@@ -1,10 +1,8 @@
-sudo: false
-
-language: node_js
-node_js:
-  - 10
-
-branches:
-  only:
-    - master
-    - ci
+{
+  "language": "node_js",
+  "os": ["linux"],
+  "dist": "xenial",
+  "sudo": false,
+  "node_js": ["10"],
+  "branches": { "only": ["master", "ci"] },
+}
