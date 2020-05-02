@@ -20,7 +20,7 @@
     "storybook": "start-storybook -p 12345",
     "selenium": "selenium-standalone install && selenium-standalone start",
     "create-tests": "webpack --mode production",
-    "test:hermione": "node_modules/.bin/hermione gui",
+    "test:hermione": "npm run selenium & npm run storybook & npm run create-tests && node_modules/.bin/hermione gui",
     "test": "react-scripts test --env=jsdom --coverage --collectCoverageFrom=src/components/**/*tsx --collectCoverageFrom=!src/components/**/__stories/**/*"
   },
   "eslintConfig": {
