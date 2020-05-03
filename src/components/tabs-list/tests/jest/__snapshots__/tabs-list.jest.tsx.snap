@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabsList should exist 1`] = `
+<section
+  className="tabs-list"
+>
+  <ul
+    className="tabs-list__headers"
+  >
+    <button
+      className="tab-toggle tab-toggle_active"
+      onClick={[Function]}
+      type="button"
+    >
+      First tab
+    </button>
+    <button
+      className="tab-toggle "
+      onClick={[Function]}
+      type="button"
+    >
+      Second tab
+    </button>
+    <button
+      className="tab-toggle "
+      onClick={[Function]}
+      type="button"
+    >
+      Third tab
+    </button>
+  </ul>
+  <ul
+    className="tabs-list__content"
+  >
+    <section
+      className="tab-content "
+    >
+      First tab content
+    </section>
+    <section
+      className="tab-content tab-content_hidden"
+    >
+      Second tab content
+    </section>
+    <section
+      className="tab-content tab-content_hidden"
+    >
+      Third tab content
+    </section>
+  </ul>
+</section>
+`;
