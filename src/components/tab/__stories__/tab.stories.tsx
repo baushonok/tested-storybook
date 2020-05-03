@@ -9,12 +9,12 @@ storiesOf("Tab", module)
       <Tab name="First" content={<h1>content title</h1>} />
     </div>
   ))
-  .add("Initially open", () => (
+  .add("Initially Open", () => (
     <div className="story-container">
       <Tab name="Tab name" content={<h1>content title</h1>} isOpen={true} />
     </div>
   ))
-  .add("Several tabs", () => (
+  .add("Several Tabs", () => (
     <div className="story-container">
       <Tab name="First" content={<h1>first content title</h1>} isOpen={true} />
       <Tab name="Second" content={<h1>second content title</h1>} />
