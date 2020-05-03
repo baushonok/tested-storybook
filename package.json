@@ -14,13 +14,14 @@
     "typescript": "3.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=12345 react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 12345",
     "selenium": "selenium-standalone install && selenium-standalone start",
     "create-tests": "webpack --mode production",
-    "test:hermione": "npm run selenium & npm run storybook & npm run create-tests && node_modules/.bin/hermione gui",
+    "test:storybook": "npm run selenium & npm run storybook & npm run create-tests && node_modules/.bin/hermione --set storybook gui",
+    "test:app": "node_modules/.bin/hermione --set app gui",
     "test": "jest"
   },
   "eslintConfig": {
@@ -45,12 +46,12 @@
     "@babel/preset-typescript": "7.9.0",
     "@storybook/react": "5.3.18",
     "@types/jest": "25.2.1",
-    "babel-jest": "25.5.1",
+    "babel-jest": "24.9.0",
     "babel-loader": "8.1.0",
     "codecov.io": "0.1.6",
     "coveralls": "3.1.0",
     "html-reporter": "5.15.3",
-    "jest": "25.5.4",
+    "jest": "24.9.0",
     "react-test-renderer": "16.13.1",
     "storytests-webpack-plugin": "1.0.4",
     "ts-jest": "25.4.0",
