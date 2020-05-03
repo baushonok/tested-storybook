@@ -1,0 +1,18 @@
+.tab__content {
+  display: block;
+}
+
+.tab__content_hidden {
+  display: none;
+}
+
+.tab__toggle {
+  width: 50px;
+  height: 24px;
+  background: none;
+  border: none;
+}
+
+.tab__toggle_active {
+  border-bottom: 2px solid lightcoral;
+}
