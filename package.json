@@ -14,13 +14,14 @@
     "typescript": "3.8.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=12345 react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 12345",
     "selenium": "selenium-standalone install && selenium-standalone start",
     "create-tests": "webpack --mode production",
-    "test:hermione": "npm run selenium & npm run storybook & npm run create-tests && node_modules/.bin/hermione gui",
+    "test:storybook": "npm run selenium & npm run storybook & npm run create-tests && node_modules/.bin/hermione gui",
+    "test:hermione": "node_modules/.bin/hermione gui",
     "test": "jest"
   },
   "eslintConfig": {
