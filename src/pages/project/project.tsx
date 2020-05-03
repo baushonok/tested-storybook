@@ -1,9 +1,10 @@
 import React, { FC } from "react";
 
 import { IProjectPage } from "./types";
+import TabsList from "../../components/tabs-list";
 
-const ProjectPage: FC<IProjectPage> = ({ tabs = [] }) => {
-  return <main>{tabs.map((item) => item.name)}</main>;
+const ProjectPage: FC<IProjectPage> = ({ data = [] }) => {
+  return <main>{<TabsList data={data} />}</main>;
 };
 
 export default ProjectPage;

@@ -5,7 +5,7 @@ import "./tab-toggle.css";
 
 const TabToggle: FC<ITabName> = memo(
   ({ name, index, isActive = false, onClick }) => {
-    const handleClick = useCallback(() => onClick(index), [index]);
+    const handleClick = useCallback(() => onClick(index), [index, onClick]);
 
     return (
       <button

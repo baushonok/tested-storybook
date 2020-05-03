@@ -9,3 +9,8 @@
 .tab-toggle_active {
   border-bottom: 2px solid lightcoral;
 }
+
+.tab-toggle:focus {
+  background-color: rgba(135, 0, 0, 0.1);
+  outline: none;
+}

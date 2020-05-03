@@ -1,10 +1,5 @@
-import { ReactNode } from "react";
+import { ITab } from "../../components/tabs-list/types";
 
 export interface IProjectPage {
-  tabs: IProjectTab[];
-}
-
-export interface IProjectTab {
-  name: string;
-  children?: ReactNode;
+  data: ITab[];
 }
