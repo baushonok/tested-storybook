@@ -10,7 +10,7 @@ const TabsList: FC<ITabsList> = memo(({ data = [] }) => {
 
   return (
     <section className="tabs-list">
-      <ul className="tabs-list__headers">
+      <ul className="tabs-list__headers" data-testid="tab-toggle-list">
         {data.map(({ name }, index) => (
           <TabToggle
             key={name}
@@ -21,7 +21,7 @@ const TabsList: FC<ITabsList> = memo(({ data = [] }) => {
           />
         ))}
       </ul>
-      <ul className="tabs-list__content">
+      <ul className="tabs-list__content" data-testid="tab-content-list">
         {data.map(({ content, name }, index) => (
           <TabContent key={name} data={content} isActive={isActiveTab(index)} />
         ))}

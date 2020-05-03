@@ -1,12 +1,33 @@
+import { screen, render } from "@testing-library/react";
 import React from "react";
 import renderer from "react-test-renderer";
 
 import TabsList from "../..";
 import { data } from "../../__stories__/mocks";
 
-test("TabsList should exist", () => {
-  const component = renderer.create(<TabsList data={data} />);
+describe("TabsList", () => {
+  test("should exist", () => {
+    const component = renderer.create(<TabsList data={data} />);
 
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  test("first toggle active by default", () => {
+    render(<TabsList data={data} />);
+
+    const toggleList = screen.getByTestId("tab-toggle-list");
+    const firstToggle = toggleList.getElementsByClassName("tab-toggle")[0];
+
+    expect(firstToggle).toHaveClass("tab-toggle_active");
+  });
+
+  test("first section is visible by default", () => {
+    render(<TabsList data={data} />);
+
+    const sectionList = screen.getByTestId("tab-content-list");
+    const firstSection = sectionList.getElementsByClassName("tab-content")[0];
+
+    expect(firstSection).toBeVisible();
+  });
 });

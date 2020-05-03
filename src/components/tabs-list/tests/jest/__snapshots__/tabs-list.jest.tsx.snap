@@ -6,6 +6,7 @@ exports[`TabsList should exist 1`] = `
 >
   <ul
     className="tabs-list__headers"
+    data-testid="tab-toggle-list"
   >
     <button
       className="tab-toggle tab-toggle_active"
@@ -31,6 +32,7 @@ exports[`TabsList should exist 1`] = `
   </ul>
   <ul
     className="tabs-list__content"
+    data-testid="tab-content-list"
   >
     <section
       className="tab-content "
