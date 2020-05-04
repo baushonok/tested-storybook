@@ -1,4 +1,3 @@
-# Factory line manager
 [![Travis][build-badge]][build]
 [![Coveralls][coveralls-badge]][coveralls]
 
