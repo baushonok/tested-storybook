@@ -1,32 +1,19 @@
-import React, { Component, Fragment } from "react";
+import React, { useState, Fragment, FC } from "react";
 
-import { IProps, IState } from "./types";
+import { IProps } from "./types";
 
-class Accordion extends Component<IProps, IState> {
-  public readonly state: IState = {
-    showContent: false
-  };
+const Accordion: FC<IProps> = ({ children }) => {
+  const [showContent, setShowContent] = useState(false);
+  const toggleVisibility = () => setShowContent(!showContent);
 
-  public render() {
-    const { showContent } = this.state;
-
-    return (
-      <Fragment>
-        <button type="button" onClick={this.toggle}>
-          Click me
-        </button>
-        {showContent && this.renderContent()}
-      </Fragment>
-    );
-  }
-
-  private toggle = () => {
-    this.setState(state => ({
-      showContent: !state.showContent
-    }));
-  };
-
-  private renderContent = () => this.props.children;
-}
+  return (
+    <Fragment>
+      <button type="button" onClick={toggleVisibility}>
+        Click me
+      </button>
+      {showContent && children}
+    </Fragment>
+  );
+};
 
 export default Accordion;
