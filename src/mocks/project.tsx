@@ -1,9 +1,12 @@
+import React from "react";
+
+import Accordion from "../components/accordion";
 import { ITab } from "../components/tabs-list/types";
 
 export const data: ITab[] = [
   {
     name: "Common settings",
-    content: "Common settings content",
+    content: <Accordion>Common settings content</Accordion>,
   },
   {
     name: "Other settings",
