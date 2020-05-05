@@ -8,10 +8,14 @@ const Accordion: FC<IProps> = ({ children }) => {
 
   return (
     <Fragment>
-      <button type="button" onClick={toggleVisibility}>
+      <button
+        type="button"
+        onClick={toggleVisibility}
+        data-testid="accordion-toggle"
+      >
         Click me
       </button>
-      {showContent && children}
+      {showContent && <div data-testid="accordion-content" id="content">{children}</div>}
     </Fragment>
   );
 };
