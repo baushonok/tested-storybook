@@ -45,7 +45,7 @@ describe("Accordion", () => {
       expect(content).toBeInTheDocument();
     });
 
-    test("should be collapsed by double after clicking toggle", () => {
+    test("should be collapsed after double clicking toggle", () => {
       toggle.click();
       toggle.click();
 
