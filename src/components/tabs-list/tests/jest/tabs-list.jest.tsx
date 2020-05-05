@@ -1,33 +1,61 @@
-import { render } from "@testing-library/react";
+import { render, RenderResult } from "@testing-library/react";
 import React from "react";
 import renderer from "react-test-renderer";
 
 import TabsList from "../..";
-import { data } from "../../__stories__/mocks";
+import { data } from "../../__mocks__/data";
+import { getSectionByIndex, getToggleByIndex } from "./helpers";
 
 describe("TabsList", () => {
-  test("should exist", () => {
-    const component = renderer.create(<TabsList data={data} />);
+  describe("shapshots", () => {
+    test("should match when empty", () => {
+      let tree = renderer.create(<TabsList data={[]} />).toJSON();
 
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+      expect(tree).toMatchSnapshot();
+    });
+
+    test("should match with data", () => {
+      let tree = renderer.create(<TabsList data={data} />).toJSON();
+
+      expect(tree).toMatchSnapshot();
+    });
   });
 
-  test("first toggle active by default", () => {
-    const { getByTestId } = render(<TabsList data={data} />);
+  describe("behaviour", () => {
+    let renderedComponent: RenderResult;
 
-    const toggleList = getByTestId("tab-toggle-list");
-    const firstToggle = toggleList.getElementsByClassName("tab-toggle")[0];
+    beforeEach(() => {
+      renderedComponent = render(<TabsList data={data} />);
+    });
 
-    expect(firstToggle).toHaveClass("tab-toggle_active");
-  });
+    test("first tab is active by default", () => {
+      const firstToggle = getToggleByIndex(renderedComponent, 0);
+      const firstSection = getSectionByIndex(renderedComponent, 0);
 
-  test("first section is visible by default", () => {
-    const { getByTestId } = render(<TabsList data={data} />);
+      expect(firstToggle).toHaveClass("tab-toggle_active");
+      expect(firstSection).toBeVisible();
+    });
 
-    const sectionList = getByTestId("tab-content-list");
-    const firstSection = sectionList.getElementsByClassName("tab-content")[0];
+    test("second tab is not active by default", () => {
+      const secondToggle = getToggleByIndex(renderedComponent, 1);
+      const secondSection = getSectionByIndex(renderedComponent, 1);
 
-    expect(firstSection).toBeVisible();
+      expect(secondToggle).not.toHaveClass("tab-toggle_active");
+      expect(secondSection).not.toBeVisible();
+    });
+
+    test("second tab is active after clicking", () => {
+      const firstToggle = getToggleByIndex(renderedComponent, 0);
+      const firstSection = getSectionByIndex(renderedComponent, 0);
+      const secondToggle = getToggleByIndex(renderedComponent, 1);
+      const secondSection = getSectionByIndex(renderedComponent, 1);
+
+      secondToggle.click();
+
+      expect(firstToggle).not.toHaveClass("tab-toggle_active");
+      expect(firstSection).not.toBeVisible();
+      expect(secondToggle).toHaveClass("tab-toggle_active");
+      expect(secondSection).toBeVisible();
+    });
   });
 });

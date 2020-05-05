@@ -1,6 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TabsList should exist 1`] = `
+exports[`TabsList shapshots should match when empty 1`] = `
+<section
+  className="tabs-list"
+>
+  <ul
+    className="tabs-list__headers"
+    data-testid="tab-toggle-list"
+  />
+  <ul
+    className="tabs-list__content"
+    data-testid="tab-content-list"
+  />
+</section>
+`;
+
+exports[`TabsList shapshots should match with data 1`] = `
 <section
   className="tabs-list"
 >

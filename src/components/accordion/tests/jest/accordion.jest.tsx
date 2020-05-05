@@ -3,6 +3,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 
 import Accordion from "../..";
+import { data } from "../../__mocks__/data";
 import { getContent, getToggle } from "./helpers";
 
 describe("Accordion", () => {
@@ -14,9 +15,7 @@ describe("Accordion", () => {
     });
 
     test("should match with content", () => {
-      const tree = renderer
-        .create(<Accordion>Some content</Accordion>)
-        .toJSON();
+      const tree = renderer.create(<Accordion>{data}</Accordion>).toJSON();
 
       expect(tree).toMatchSnapshot();
     });
