@@ -15,7 +15,7 @@ const Accordion: FC<IProps> = ({ children }) => {
       >
         Click me
       </button>
-      {showContent && <div data-testid="accordion-content" id="content">{children}</div>}
+      {showContent && <div data-testid="accordion-content">{children}</div>}
     </Fragment>
   );
 };
