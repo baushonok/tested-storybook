@@ -1,7 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Accordion should exist 1`] = `
+exports[`Accordion shapshots should match when empty 1`] = `
 <button
+  data-testid="accordion-toggle"
+  onClick={[Function]}
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`Accordion shapshots should match with content 1`] = `
+<button
+  data-testid="accordion-toggle"
   onClick={[Function]}
   type="button"
 >
