@@ -1,6 +1,6 @@
 import { render, RenderResult } from "@testing-library/react";
 import React from "react";
-import renderer, { ReactTestRendererJSON } from "react-test-renderer";
+import renderer from "react-test-renderer";
 
 import Accordion from "../..";
 import { getContent, getToggle } from "./helpers";
