@@ -59,7 +59,7 @@
     "jest": "24.9.0",
     "jest-transform-css": "2.0.0",
     "react-test-renderer": "16.13.1",
-    "storytests-webpack-plugin": "^1.0.5",
+    "storytests-webpack-plugin": "^1.0.6",
     "ts-jest": "25.4.0",
     "ts-loader": "7.0.2",
     "webpack": "4.42.0",
