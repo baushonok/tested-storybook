@@ -14,4 +14,12 @@ storiesOf("Accordion", module)
     <div className="story-container">
       <Accordion></Accordion>
     </div>
+  ))
+  .add("With remove control", () => (
+    <div className="story-container">
+      <Accordion>
+        {data}
+        <button type="button">Remove</button>
+      </Accordion>
+    </div>
   ));
