@@ -3,7 +3,6 @@
 
 [build-badge]: https://img.shields.io/travis/baushonok/tested-storybook/master.png?style=flat-square
 [build]: https://travis-ci.org/baushonok/tested-storybook
-
 [coveralls-badge]: https://img.shields.io/coveralls/baushonok/tested-storybook/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/baushonok/tested-storybook
 
