@@ -26,3 +26,9 @@
   color: white;
   background-color: lightblue;
 }
+
+.button[disabled] {
+  pointer-events: none;
+
+  opacity: 0.5;
+}

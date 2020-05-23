@@ -1,3 +1,5 @@
 import { ButtonHTMLAttributes } from "react";
 
-export type IProps = ButtonHTMLAttributes<HTMLButtonElement>;
+export interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  onClick?: () => void;
+}
