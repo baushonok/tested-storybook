@@ -12,7 +12,7 @@ storiesOf('Accordion', module)
   ))
   .add('No Content', () => (
     <div className="story-container">
-      <Accordion></Accordion>
+      <Accordion />
     </div>
   ))
   .add('With remove control', () => (
