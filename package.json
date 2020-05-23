@@ -22,7 +22,7 @@
     "selenium": "selenium-standalone install && selenium-standalone start",
     "create-tests": "webpack --mode production",
     "test:storybook": "npm run selenium & npm run storybook & npm run create-tests && node_modules/.bin/hermione --set storybook gui",
-    "test:app": "node_modules/.bin/hermione --set app gui",
+    "test:app": "npm run selenium & npm run start & node_modules/.bin/hermione --set app gui",
     "test": "jest"
   },
   "eslintConfig": {
