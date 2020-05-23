@@ -1,8 +1,8 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
-import { data } from "./__mocks__/project";
-import Project from "./pages/project";
+import { data } from './__mocks__/project';
+import Project from './pages/project';
 
 const App = () => (
   <div className="app">

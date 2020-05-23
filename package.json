@@ -24,16 +24,13 @@
     "lint:es": "eslint src/**/*.{ts,tsx}",
     "lint:css": "npx stylelint src/**/*.css",
     "lint": "npm run lint:css && npm run lint:es",
-    "fix:es": "eslint src/**/*.{ts,tsx} --fix",
-    "fix:css": "npx stylelint src/**/*.css --fix",
+    "fix:es": "npm run lint:es -- --fix",
+    "fix:css": "npm run lint:css -- --fix",
     "fix": "npm run fix:css && npm run fix:es",
     "test:hermione:storybook": "npm run selenium & npm run storybook & npm run create-tests && node_modules/.bin/hermione --set storybook gui",
     "test:hermione:app": "npm run selenium & npm run start & node_modules/.bin/hermione --set app gui",
     "test:jest": "jest",
     "test": "npm run lint && npm run test:jest"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
