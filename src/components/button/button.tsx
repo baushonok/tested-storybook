@@ -1,4 +1,4 @@
-import React, { useState, FC, useCallback } from "react";
+import React, { useCallback, FC } from "react";
 
 import { IProps } from "./types";
 
