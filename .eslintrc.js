@@ -22,12 +22,15 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'react-hooks'
   ],
   rules: {
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "react/jsx-filename-extension": "off",
     "no-unused-vars": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
 };
