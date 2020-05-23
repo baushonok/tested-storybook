@@ -3,10 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-  ],
+  extends: ['plugin:react/recommended', 'airbnb'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -19,18 +16,16 @@ module.exports = {
     ecmaVersion: 11,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'react-hooks'
-  ],
+  plugins: ['react', '@typescript-eslint', 'react-hooks'],
   rules: {
-    "import/prefer-default-export": "off",
-    "import/extensions": "off",
-    "react/jsx-filename-extension": "off",
-    "no-unused-vars": "off",
-    "import/no-unresolved": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
+    'react/jsx-filename-extension': 'off',
+    'no-unused-vars': 'off',
+    'import/no-unresolved': 'off',
+    'comma-dangle': 'off',
+    'implicit-arrow-linebreak': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 };
