@@ -76,6 +76,8 @@
     "jest": "24.9.0",
     "jest-transform-css": "2.0.0",
     "lint-staged": "10.2.6",
+    "prettier": "2.0.5",
+    "pretty-quick": "2.0.1",
     "react-test-renderer": "16.13.1",
     "storytests-webpack-plugin": "^1.0.6",
     "stylelint": "13.5.0",
@@ -87,7 +89,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm test"
+      "pre-commit": "pretty-quick --staged && npm test"
     }
   }
 }
