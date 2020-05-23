@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button shapshots should match when empty 1`] = `
+<button
+  className="button "
+  type="button"
+/>
+`;
+
+exports[`Button shapshots should match with className 1`] = `
+<button
+  className="button jest"
+  type="button"
+>
+  Click me!
+</button>
+`;
+
+exports[`Button shapshots should match with text 1`] = `
+<button
+  className="button "
+  type="button"
+>
+  Click me!
+</button>
+`;
