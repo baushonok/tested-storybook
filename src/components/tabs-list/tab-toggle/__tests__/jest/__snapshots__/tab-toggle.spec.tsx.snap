@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabToggle should match snapshot when active 1`] = `
+<button
+  className="tab-toggle tab-toggle_active"
+  data-testid="tab-toggle-0"
+  onClick={[Function]}
+  type="button"
+>
+  tab name
+</button>
+`;
+
+exports[`TabToggle should match snapshot when inactive 1`] = `
+<button
+  className="tab-toggle "
+  data-testid="tab-toggle-0"
+  onClick={[Function]}
+  type="button"
+>
+  tab name
+</button>
+`;

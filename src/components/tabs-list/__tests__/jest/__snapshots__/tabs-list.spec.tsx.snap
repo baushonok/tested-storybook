@@ -25,6 +25,7 @@ exports[`TabsList shapshots should match with data 1`] = `
   >
     <button
       className="tab-toggle tab-toggle_active"
+      data-testid="tab-toggle-0"
       onClick={[Function]}
       type="button"
     >
@@ -32,6 +33,7 @@ exports[`TabsList shapshots should match with data 1`] = `
     </button>
     <button
       className="tab-toggle "
+      data-testid="tab-toggle-1"
       onClick={[Function]}
       type="button"
     >
@@ -39,6 +41,7 @@ exports[`TabsList shapshots should match with data 1`] = `
     </button>
     <button
       className="tab-toggle "
+      data-testid="tab-toggle-2"
       onClick={[Function]}
       type="button"
     >
