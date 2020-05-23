@@ -1,8 +1,8 @@
-import React, { memo, useState, FC } from "react";
+import React, { memo, useState, FC } from 'react';
 
-import TabContent from "./tab-content";
-import TabToggle from "./tab-toggle";
-import { ITabsList } from "./types";
+import TabContent from './tab-content';
+import TabToggle from './tab-toggle';
+import { ITabsList } from './types';
 
 const TabsList: FC<ITabsList> = memo(({ data = [] }) => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);

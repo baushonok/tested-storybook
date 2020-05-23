@@ -1,1 +1,1 @@
-export { default } from "./tabs-list";
+export { default } from './tabs-list';

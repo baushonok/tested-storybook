@@ -1,17 +1,17 @@
-import React, { useCallback, FC } from "react";
+import React, { useCallback, FC } from 'react';
 
-import { IProps } from "./types";
+import { IProps } from './types';
 
-import "./button.css";
+import './button.css';
 
 const Button: FC<IProps> = ({
-  className = "",
+  className = '',
   disabled = false,
   onClick,
   ...restProps
 }) => {
   const clickHandler = useCallback(() => {
-    if (disabled || typeof onClick === "undefined") {
+    if (disabled || typeof onClick === 'undefined') {
       return;
     }
 

@@ -1,21 +1,21 @@
-import { storiesOf } from "@storybook/react";
-import React from "react";
+import { storiesOf } from '@storybook/react';
+import React from 'react';
 
-import Accordion from "../index";
-import { data } from "../__mocks__/data";
+import Accordion from '../index';
+import { data } from '../__mocks__/data';
 
-storiesOf("Accordion", module)
-  .add("Default", () => (
+storiesOf('Accordion', module)
+  .add('Default', () => (
     <div className="story-container">
       <Accordion>{data}</Accordion>
     </div>
   ))
-  .add("No Content", () => (
+  .add('No Content', () => (
     <div className="story-container">
-      <Accordion></Accordion>
+      <Accordion />
     </div>
   ))
-  .add("With remove control", () => (
+  .add('With remove control', () => (
     <div className="story-container">
       <Accordion>
         {data}

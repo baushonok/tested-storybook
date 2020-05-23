@@ -1,6 +1,6 @@
-import React, { useState, Fragment, FC } from "react";
+import React, { useState, Fragment, FC } from 'react';
 
-import { IProps } from "./types";
+import { IProps } from './types';
 
 const Accordion: FC<IProps> = ({ children }) => {
   const [showContent, setShowContent] = useState(false);

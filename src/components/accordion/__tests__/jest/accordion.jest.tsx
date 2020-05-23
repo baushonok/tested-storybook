@@ -1,27 +1,27 @@
-import { render, RenderResult } from "@testing-library/react";
-import React from "react";
-import renderer from "react-test-renderer";
+import { render, RenderResult } from '@testing-library/react';
+import React from 'react';
+import renderer from 'react-test-renderer';
 
-import Accordion from "../..";
-import { data } from "../../__mocks__/data";
-import { getContent, getToggle } from "./helpers";
+import Accordion from '../..';
+import { data } from '../../__mocks__/data';
+import { getContent, getToggle } from './helpers';
 
-describe("Accordion", () => {
-  describe("shapshots", () => {
-    test("should match when empty", () => {
+describe('Accordion', () => {
+  describe('shapshots', () => {
+    test('should match when empty', () => {
       const tree = renderer.create(<Accordion />).toJSON();
 
       expect(tree).toMatchSnapshot();
     });
 
-    test("should match with content", () => {
+    test('should match with content', () => {
       const tree = renderer.create(<Accordion>{data}</Accordion>).toJSON();
 
       expect(tree).toMatchSnapshot();
     });
   });
 
-  describe("behaviour", () => {
+  describe('behaviour', () => {
     let renderedComponent: RenderResult;
     let toggle: HTMLElement;
 
@@ -30,13 +30,13 @@ describe("Accordion", () => {
       toggle = getToggle(renderedComponent)!;
     });
 
-    test("should be collapsed by default", () => {
+    test('should be collapsed by default', () => {
       const content = getContent(renderedComponent);
 
       expect(content).not.toBeInTheDocument();
     });
 
-    test("should be expanded after clicking toggle", () => {
+    test('should be expanded after clicking toggle', () => {
       toggle.click();
 
       const content = getContent(renderedComponent);
@@ -44,7 +44,7 @@ describe("Accordion", () => {
       expect(content).toBeInTheDocument();
     });
 
-    test("should be collapsed after double clicking toggle", () => {
+    test('should be collapsed after double clicking toggle', () => {
       toggle.click();
       toggle.click();
 
