@@ -1,4 +1,4 @@
-import React, { useState, FC } from "react";
+import React, { useCallback, useState, FC } from "react";
 
 import { IProjectPage } from "./types";
 import Button from "../../components/button";
@@ -8,13 +8,13 @@ import "./project.css";
 
 const ProjectPage: FC<IProjectPage> = ({ data = [] }) => {
   const [allowedToSendFeedback, setAllowedToSendFeedback] = useState(true);
-  const sendFeedback = () => {
+  const sendFeedback = useCallback(() => {
     setAllowedToSendFeedback(false);
 
     setTimeout(() => {
       setAllowedToSendFeedback(true);
     }, 5000);
-  };
+  }, []);
 
   return (
     <main className="project">

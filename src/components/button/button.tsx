@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { useState, FC, useCallback } from "react";
 
 import { IProps } from "./types";
 
@@ -10,13 +10,13 @@ const Button: FC<IProps> = ({
   onClick,
   ...restProps
 }) => {
-  const clickHandler = () => {
+  const clickHandler = useCallback(() => {
     if (disabled || typeof onClick === "undefined") {
       return;
     }
 
     onClick();
-  };
+  }, [disabled, onClick]);
 
   return (
     <button
