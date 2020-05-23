@@ -23,6 +23,7 @@ const Button: FC<IProps> = ({
       type="button"
       className={`button ${className}`}
       disabled={disabled}
+      data-testid="button"
       {...restProps}
       onClick={clickHandler}
     />

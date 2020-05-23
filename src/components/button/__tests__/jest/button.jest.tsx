@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import renderer from "react-test-renderer";
 
+import { getButton } from "./helpers";
 import Button from "../../";
 
 describe("Button", () => {
@@ -41,7 +42,7 @@ describe("Button", () => {
 
     test("should invoke onClick", () => {
       render(<Button onClick={clickHandler}>{buttonText}</Button>);
-      const button = screen.getByText(buttonText);
+      const button = getButton(screen);
 
       button.click();
 
@@ -54,7 +55,7 @@ describe("Button", () => {
           {buttonText}
         </Button>
       );
-      const button = screen.getByText(buttonText);
+      const button = getButton(screen);
 
       button.click();
 
