@@ -1,10 +1,10 @@
-import React, { useCallback, useState, FC } from "react";
+import React, { useCallback, useState, FC } from 'react';
 
-import { IProjectPage } from "./types";
-import Button from "../../components/button";
-import TabsList from "../../components/tabs-list";
+import { IProjectPage } from './types';
+import Button from '../../components/button';
+import TabsList from '../../components/tabs-list';
 
-import "./project.css";
+import './project.css';
 
 const ProjectPage: FC<IProjectPage> = ({ data = [] }) => {
   const [allowedToSendFeedback, setAllowedToSendFeedback] = useState(true);

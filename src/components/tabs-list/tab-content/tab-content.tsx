@@ -1,11 +1,11 @@
-import React, { memo, FC } from "react";
+import React, { memo, FC } from 'react';
 
-import { ITabContent } from "./types";
+import { ITabContent } from './types';
 
-import "./tab-content.css";
+import './tab-content.css';
 
 const TabContent: FC<ITabContent> = memo(({ data, isActive = false }) => (
-  <section className={`tab-content ${isActive ? "" : "tab-content_hidden"}`}>
+  <section className={`tab-content ${isActive ? '' : 'tab-content_hidden'}`}>
     {data}
   </section>
 ));
