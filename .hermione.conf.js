@@ -3,10 +3,10 @@ module.exports = {
 
   sets: {
     app: {
-      files: "src/tests/hermione/*.hermione.js",
+      files: "src/__tests__/hermione/*.hermione.js",
     },
     storybook: {
-      files: "src/components/**/tests/hermione/*.hermione.js",
+      files: "src/components/**/__tests__/hermione/*.hermione.js",
     },
   },
 

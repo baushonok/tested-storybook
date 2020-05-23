@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button shapshots should match when disabled 1`] = `
+<button
+  className="button "
+  data-testid="button"
+  disabled={true}
+  onClick={[Function]}
+  type="button"
+>
+  Click me!
+</button>
+`;
+
+exports[`Button shapshots should match when empty 1`] = `
+<button
+  className="button "
+  data-testid="button"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+/>
+`;
+
+exports[`Button shapshots should match with className 1`] = `
+<button
+  className="button jest"
+  data-testid="button"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  Click me!
+</button>
+`;
+
+exports[`Button shapshots should match with text 1`] = `
+<button
+  className="button "
+  data-testid="button"
+  disabled={false}
+  onClick={[Function]}
+  type="button"
+>
+  Click me!
+</button>
+`;

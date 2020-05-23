@@ -8,7 +8,7 @@ const storyFilesPath = path.resolve(
   "components/**/__stories__/*.stories.tsx"
 );
 
-const testDirectoryPath = "../../tests/hermione";
+const testDirectoryPath = "../../__tests__/hermione";
 
 const testFilePostfixes = ['hermione'];
 
