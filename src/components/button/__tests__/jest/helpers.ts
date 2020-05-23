@@ -1,3 +1,3 @@
-import { Screen } from "@testing-library/react";
+import { Screen } from '@testing-library/react';
 
-export const getButton = (screen: Screen) => screen.getByTestId("button");
+export const getButton = (screen: Screen) => screen.getByTestId('button');
