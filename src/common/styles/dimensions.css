@@ -1,0 +1,12 @@
+:root {
+  --feedback-ctrl-padding-vertical: 6px;
+  --feedback-ctrl-padding-horizontal: 8px;
+  --feedback-ctrl-border-width: 1px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --feedback-ctrl-padding-horizontal: 12px;
+    --feedback-ctrl-border-width: 2px;
+  }
+}
