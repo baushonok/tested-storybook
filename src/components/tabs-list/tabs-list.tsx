@@ -1,4 +1,4 @@
-import React, { useCallback, useState, FC } from 'react';
+import React, { useState, FC } from 'react';
 
 import TabContent from './tab-content';
 import TabToggle from './tab-toggle';

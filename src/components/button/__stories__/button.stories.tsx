@@ -3,6 +3,8 @@ import React from 'react';
 
 import Button from '../button';
 
+import '../../../common/styles.css';
+
 storiesOf('Button', module).add('Default', () => (
   <div className="story-container">
     <link
