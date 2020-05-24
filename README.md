@@ -6,6 +6,11 @@
 [coveralls-badge]: https://img.shields.io/coveralls/baushonok/tested-storybook/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/baushonok/tested-storybook
 
+# Tested Storybook
+
+App created for testing [storytests-webpack-plugin](https://www.npmjs.com/package/storytests-webpack-plugin), but also used for experiments with Hermione, Jest, CI and other technologies.  
+Currently here are unit tests (Jest) and simple screenshot tests (Hermione) for each component. As well here are simple e2e tests for the whole app (Hermione).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -15,15 +20,24 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:12345](http://localhost:12345) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+### `npm storybook`
+
+Launch Storybook.  
+Open [http://localhost:12345](http://localhost:12345) to view it in the browser.
+
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launch linting (ESLint, styleling) and testing (Jest).  
+This script is also running on CI.
+
+### `npm create-tests`
+
+Launch [storytests-webpack-plugin](https://www.npmjs.com/package/storytests-webpack-plugin) created simple screenshot tests for components according to their stories for Storybook. These tests will be placed to 'src/components/_component-name_/\_\_tests\__/hermione/\_story-name_.hermione.js'. If test already exists it will not be rewritten.
 
 ### `npm run build`
 
