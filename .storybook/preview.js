@@ -2,6 +2,8 @@ import { addDecorator, configure } from '@storybook/react';
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
+import '../src/common/styles.css';
+
 const StoryContainer = ({ children }) => (
   <Fragment>
     <Helmet>
