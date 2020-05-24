@@ -5,21 +5,11 @@ import Accordion from '../index';
 import { data } from '../__mocks__/data';
 
 storiesOf('Accordion', module)
-  .add('Default', () => (
-    <div className="story-container">
-      <Accordion>{data}</Accordion>
-    </div>
-  ))
-  .add('No Content', () => (
-    <div className="story-container">
-      <Accordion />
-    </div>
-  ))
+  .add('Default', () => <Accordion>{data}</Accordion>)
+  .add('No Content', () => <Accordion />)
   .add('With remove control', () => (
-    <div className="story-container">
-      <Accordion>
-        {data}
-        <button type="button">Remove</button>
-      </Accordion>
-    </div>
+    <Accordion>
+      {data}
+      <button type="button">Remove</button>
+    </Accordion>
   ));
