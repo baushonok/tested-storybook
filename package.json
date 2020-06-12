@@ -76,7 +76,7 @@
     "prettier": "2.0.5",
     "pretty-quick": "2.0.1",
     "react-test-renderer": "16.13.1",
-    "storytests-webpack-plugin": "^1.0.6",
+    "storytests-webpack-plugin": "^1.0.7",
     "stylelint": "13.5.0",
     "stylelint-config-standard": "20.0.0",
     "ts-jest": "25.4.0",
