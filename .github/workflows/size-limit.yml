@@ -15,4 +15,3 @@ jobs:
       - uses: andresz1/size-limit-action@v1.2.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          size-build: npm run build
