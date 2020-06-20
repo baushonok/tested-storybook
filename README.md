@@ -1,14 +1,16 @@
 [![Travis][build-badge]][build]
 [![Coveralls][coveralls-badge]][coveralls]
+[![Size limit](https://github.com/baushonok/tested-storybook/workflows/size-limit/badge.svg)](size-limit)
 
 [build-badge]: https://img.shields.io/travis/baushonok/tested-storybook/master.png?style=flat-square
 [build]: https://travis-ci.org/baushonok/tested-storybook
 [coveralls-badge]: https://img.shields.io/coveralls/baushonok/tested-storybook/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/baushonok/tested-storybook
+[size-limit]: https://github.com/baushonok/tested-storybook/actions?query=workflows%3Asize-limit
 
 # Tested Storybook
 
-App created for testing [storytests-webpack-plugin](https://www.npmjs.com/package/storytests-webpack-plugin), but also used for experiments with Hermione, Jest, CI and other technologies.  
+App created for testing [storytests-webpack-plugin](https://www.npmjs.com/package/storytests-webpack-plugin), but also used for experiments with Hermione, Jest, CI and other technologies.
 Currently here are unit tests (Jest) and simple screenshot tests (Hermione) for each component. As well here are simple e2e tests for the whole app (Hermione).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -27,12 +29,12 @@ You will also see any lint errors in the console.
 
 ### `npm storybook`
 
-Launch Storybook.  
+Launch Storybook.
 Open [http://localhost:12345](http://localhost:12345) to view it in the browser.
 
 ### `npm test`
 
-Launch linting (ESLint, styleling) and testing (Jest).  
+Launch linting (ESLint, styleling) and testing (Jest).
 This script is also running on CI.
 
 ### `npm create-tests`
