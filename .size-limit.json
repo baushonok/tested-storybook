@@ -1,0 +1,9 @@
+[
+  {
+    "path": "dist/bundle.js",
+    "brotli": true,
+    "gzip": false,
+    "limit": "1.1 s",
+    "ignore": ["fs", "path"]
+  }
+]
