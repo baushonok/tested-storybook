@@ -1,11 +1,11 @@
 const testTemplate = (component, story) =>
   `describe('${component}', function() {
     it('${story}', function() {
-        const selector = '.story-container';
+      const selector = '.story-container';
 
-        return this.browser
-            .url('iframe.html?selectedKind=${component}&selectedStory=${story}')
-            .assertView('${story}', selector);
+      return this.browser
+          .url('iframe.html?selectedKind=${component}&selectedStory=${story}')
+          .assertView('${story}', selector);
     });
 });`;
 
